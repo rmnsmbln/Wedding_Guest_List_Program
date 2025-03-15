@@ -1,3 +1,8 @@
+class Guest:
+  def __init__(self):
+    self.name = name
+    self.total_score = 0
+
 def main():
   print("Wedding Guest List Builder")
   guests = []
