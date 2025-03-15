@@ -68,7 +68,7 @@ def main():
             file.write(f"\nTotal guests: {len(guests)}")
             if len(guests) > 200:
                 file.write(f" (Top 200 shown in terminal)")
-        print("\nGuest list saved to 'all_guests.txt'!")
+        print("\nGuest list saved to 'Top-Wedding-Guest.txt'!")
     except Exception as e:
         print(f"Error saving file: {e}")
 
