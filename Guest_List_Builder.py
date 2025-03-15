@@ -57,6 +57,20 @@ def main():
       print(f"{i + 1}. {guest.name:<20} Score: {guest.total_score}")
     else:
       break
+  
+    # Save ALL guests to a text file
+    try:
+        with open("Top-Wedding-Guest.txt", "w") as file:
+            file.write("Complete Wedding Guest List\n")
+            file.write("-" * 40 + "\n")
+            for i, guest in enumerate(guests, 1):  # Enumerate all guests, starting at 1
+                file.write(f"{i}. {guest.name:<20} Score: {guest.total_score}\n")
+            file.write(f"\nTotal guests: {len(guests)}")
+            if len(guests) > 200:
+                file.write(f" (Top 200 shown in terminal)")
+        print("\nGuest list saved to 'all_guests.txt'!")
+    except Exception as e:
+        print(f"Error saving file: {e}")
 
 if __name__ == "__main__":
   main()
