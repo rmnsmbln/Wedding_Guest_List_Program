@@ -42,13 +42,21 @@ def main():
       break
     guest = Guest(name)
     rate_guest(guest)
-    guests.append(name)
+    guests.append(guest)
 
-  # Show the list
-  print("\nYour guests:")
+  # Sort by score (Highest First)
+  guests.sort(key=lambda x: x.total_score, reverse=True)
 
-  for i in range(1, len(guests)+1):
-    print(f"{i}. {guests[i-1]} - Score: {guest.total_score}")
+  # Show the top 200 guest
+  print("\nYour Top 200 guests:")
+  print("-" * 40)
+
+  for i in range(200):
+    if i < len(guests):
+      guest = guests[i]
+      print(f"{i + 1}. {guest.name:<20} Score: {guest.total_score}")
+    else:
+      break
 
 if __name__ == "__main__":
   main()
